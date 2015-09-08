@@ -13,8 +13,13 @@ function findGreatestPalindrome(floor, ceiling) {
     var primaryCounter = ceiling;
     var secondaryCounter = ceiling;
     
-   while(!isAPalindrome(primaryCounter * secondaryCounter) && secondaryCounter != floor) {
-       secondaryCounter--;
-   }
+    while(!isAPalindrome(primaryCounter * secondaryCounter)) {
+        secondaryCounter--;
+        if(secondaryCounter == floor) {
+            secondaryCounter = ceiling - 1;
+            primaryCounter--;
+        }
+    }
+    return primaryCounter * secondaryCounter;   
     
 }
