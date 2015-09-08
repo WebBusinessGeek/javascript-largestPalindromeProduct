@@ -10,12 +10,17 @@ describe("Algorithm", function() {
         result = isAPalindrome(4455);
         expect(result).toBe(false);
     });
-    it("should return greatest palindrome possible within limits specifiied", function() {
-        result = findGreatestPalindrome(10, 99);
-        expect(result).toBe(9009);
+    it("should return all palindromes possible between the specified range", function() {
+        result = findAllPalindromes(1, 11);
+        good = [121,99,88,77,66,55,44,33,22,11];
+        expect(result).toEqual(good);
     });
-    it("should return the answer to the problem", function() {
-        result = findGreatestPalindrome(100, 999);
-        expect(result).toBe(580085);
+    it("should return the largest integer in an integer array", function() {
+        result = findLargestIntegerInArray([121,99,88,77,66,55,44,33,22,11]);
+        expect(result).toBe(121);
     });
+    it("should return the largest palindrome using integers between specified limits ", function() {
+        result = findLargestPalindrome(100, 999);
+        expect(result).toBe(906609);
+    })
 });
