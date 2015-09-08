@@ -8,3 +8,13 @@ function isAPalindrome(integerValue) {
     }
     return false;
 }
+
+function findGreatestPalindrome(floor, ceiling) {
+    var primaryCounter = ceiling;
+    var secondaryCounter = ceiling;
+    
+   while(!isAPalindrome(primaryCounter * secondaryCounter) && secondaryCounter != floor) {
+       secondaryCounter--;
+   }
+    
+}
